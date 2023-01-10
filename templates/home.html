@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meter monitoring</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    {% for meter in meters %}
+                        <li>
+                            <a href="/meters/{{meter.id}}">{{meter.label}}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                {% if meters|length == 0 %}
+                    <p>There are no meters yet.</p>
+                {% endif %}
+            </div>
+    </div>
+</body>
+</html>
