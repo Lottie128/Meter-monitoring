@@ -40,16 +40,16 @@ def get_meters():
     meters = []
     # create a list of objects with the meter id and label
     for meter in data:
-        meters.append({'id': meter[1+len(meter)], 'label': meter[0]})
+        meters.append({'id': data.index(meter)+1, 'label': meter[0]})
 
     # for meter in data:
     #     meters.append(meter[0])
-    # print(data)
+    print(meters)
     return render_template("home.html", meters = meters)
 
 
 # endpoint to get the data associated with a particular meter
-@app.route('/meters/<int:meter_id>', methods=['GET'])
+@app.route('/meters/<int:meter_id>')
 def get_meter_data(meter_id):
     c.execute('SELECT * FROM meter_data WHERE meter_id=? ORDER BY timestamp', (meter_id,))
     data = c.fetchall()
