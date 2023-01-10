@@ -6,9 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
+<!-- add some custom css -->
 <style>
+    body {
+        background-color: #f5f5f5;
+        margin: 0;
+    }
     .container {
         margin-top: 20px;
+    }
+    .list-group-item {
+        border: 0;
+        border-radius: 0;
+        background-color: #fff;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+    .list-group-item:hover {
+        background-color: #eaeaea;
+    }
+    .list-group-item a {
+        color: #333;
+        text-decoration: none;
     }
 </style>
 <body>
@@ -16,6 +35,7 @@
         <div class="row">
             <div class="col-md-12">
                 <ul class="list-group">
+                    <!-- iterating over the meters data -->
                     {% for meter in meters %}
                         <li class="list-group-item">
                             <a href="/meters/{{meter.id}}">{{meter.label}}</a>
@@ -23,6 +43,7 @@
                     {% endfor %}
 
                 </ul>
+                <!-- logging error message if there are no meters -->
                 {% if meters|length == 0 %}
                     <p>There are no meters yet.</p>
                 {% endif %}
