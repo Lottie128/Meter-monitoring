@@ -20,5 +20,5 @@ This is a basic Flask application that connects to a local SQLite database and d
 - The commented code is to generated the database tables and the mock meter lables and the mock meter data for clear demonstration of the meter monitoring data linked to its respective .json data.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Lottie128/Meter-monitoring/blob/4dc740672bebdd20a9863899aa441aaeeffe5349/LICENSE) file for details.
 
